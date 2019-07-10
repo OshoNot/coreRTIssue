@@ -5,7 +5,7 @@ Test coreRT compilation issues with Npgsql
 - Docker (Ubuntu 18.04 base image)
 - .Net Core 2.1
 - Npgsql 4.0.7
-- Ngpsql.Fsharp 1.0.4
+- Ngpsql.Fsharp 1.10.0
 - F#
 
 # Run
