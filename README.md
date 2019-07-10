@@ -10,4 +10,4 @@ Test coreRT compilation issues with Npgsql
 
 # Run
 - cd REPO_DIRECTORY
-- docker build .
+- docker-compose up
