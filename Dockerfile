@@ -35,7 +35,8 @@ RUN apt-get install -y \
         #tk-dev \
         #wget \
         #xz-utils \
-        zlib1g-dev 
+        zlib1g-dev \
+	libkrb5-dev
 
 WORKDIR /home/app
 
