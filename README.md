@@ -9,5 +9,5 @@ Test coreRT compilation issues with Npgsql
 - F#
 
 # Run
-cd REPO_DIRECTORY
-docker build .
+- cd REPO_DIRECTORY
+- docker build .
