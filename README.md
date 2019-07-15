@@ -1,6 +1,6 @@
 # Purpose
 This Repo is intended to test coreRT compilation issues ([#7605](https://github.com/dotnet/corert/issues/7605)) with Npgsql. It executes a simple SQL command (CREATE table) in 
-a PostgreSQL DB container. he last working prototype could be found [here](https://github.com/OshoNot/coreRTissue/commit/d32795869918d5744b601acc45b0c9083a7ef060) (No SQL commands).
+a PostgreSQL DB container. The last working prototype could be found [here](https://github.com/OshoNot/coreRTissue/commit/d32795869918d5744b601acc45b0c9083a7ef060) (No SQL commands).
 
 # Requirements
 - Docker && Docker Compose
