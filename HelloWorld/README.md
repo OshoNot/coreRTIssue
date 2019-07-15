@@ -34,15 +34,15 @@ Navigate to it and run the native executable.
             Internal.Reflection.Core.Execution.ExecutionEnvironment.GetMethodInvoker(RuntimeTypeInfo, QMethodDefinition, RuntimeTypeInfo[], MemberInfo) + 0x165
             System.Reflection.Runtime.MethodInfos.NativeFormat.NativeFormatMethodCommon.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x3f
             System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xab
-            System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo`1.MakeGenericMethod(Type[]) + 0x114
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder`3.buildPlainFinal(Object[], Type[]) + 0x243
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder`3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x517
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder`3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x1ed
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder`3.parseFormatString(String, Type) + 0xb4
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder`3.Build[T](String) + 0x42
+            System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo\`1.MakeGenericMethod(Type[]) + 0x114
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.buildPlainFinal(Object[], Type[]) + 0x243
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x517
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x1ed
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.parseFormatString(String, Type) + 0xb4
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.Build[T](String) + 0x42
             System.Collections.Concurrent.ConcurrentDictionary2.GetOrAdd(TKey, Func2) + 0x80
-            Microsoft.FSharp.Core.PrintfImpl.Cache`4.Get(PrintfFormat`4) + 0x6b
-            Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen[T](PrintfFormat`4) + 0x19
+            Microsoft.FSharp.Core.PrintfImpl.Cache\`4.Get(PrintfFormat\`4) + 0x6b
+            Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen[T](PrintfFormat\`4) + 0x19
             Npgsql.FSharp.SqlModule.str(SqlModule.ConnectionStringBuilder) + 0x3d
             <StartupCode$DbPrototype>.$Program..cctor() + 0x1ca
             System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xd5
