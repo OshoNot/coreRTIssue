@@ -14,8 +14,8 @@ chown root:root /etc/apt/sources.list.d/microsoft-prod.list && \
 apt-get update
 
 RUN apt-get install -y  apt-transport-https \
-			aspnetcore-runtime-2.1 \
-			dotnet-sdk-2.1
+			aspnetcore-runtime-2.2 \
+			dotnet-sdk-2.2
 RUN apt-get install -y \
         build-essential \
         cmake \
