@@ -1,10 +1,10 @@
 # Purpose
 This Repo is intended to test coreRT compilation issues ([#7605](https://github.com/dotnet/corert/issues/7605)) with Npgsql. It executes a simple SQL command (CREATE table) in 
-a PostgreSQL DB container.
+a PostgreSQL DB container. The last working prototype could be found [here](https://github.com/OshoNot/coreRTissue/commit/d32795869918d5744b601acc45b0c9083a7ef060) (No SQL commands).
 
 # Requirements
 - .NET Core (>=2.1)
-- Docker
+- Docker && Docker Compose
 
 # Stack
 - Docker
@@ -15,7 +15,7 @@ a PostgreSQL DB container.
 - Postgres 10
 
 # Running
-- Start the DB containar
+- Start the DB container
 ```
 cd REPO_DIRECTORY/Helloworld
 docker-compose up
@@ -34,15 +34,15 @@ Navigate to it and run the native executable.
             Internal.Reflection.Core.Execution.ExecutionEnvironment.GetMethodInvoker(RuntimeTypeInfo, QMethodDefinition, RuntimeTypeInfo[], MemberInfo) + 0x165
             System.Reflection.Runtime.MethodInfos.NativeFormat.NativeFormatMethodCommon.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x3f
             System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xab
-            System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo\`1.MakeGenericMethod(Type[]) + 0x114
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.buildPlainFinal(Object[], Type[]) + 0x243
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x517
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x1ed
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.parseFormatString(String, Type) + 0xb4
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder\`3.Build[T](String) + 0x42
+            System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo1.MakeGenericMethod(Type[]) + 0x114
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.buildPlainFinal(Object[], Type[]) + 0x243
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x517
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x1ed
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFormatString(String, Type) + 0xb4
+            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.Build[T](String) + 0x42
             System.Collections.Concurrent.ConcurrentDictionary2.GetOrAdd(TKey, Func2) + 0x80
-            Microsoft.FSharp.Core.PrintfImpl.Cache\`4.Get(PrintfFormat\`4) + 0x6b
-            Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen[T](PrintfFormat\`4) + 0x19
+            Microsoft.FSharp.Core.PrintfImpl.Cache4.Get(PrintfFormat4) + 0x6b
+            Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen[T](PrintfFormat4) + 0x19
             Npgsql.FSharp.SqlModule.str(SqlModule.ConnectionStringBuilder) + 0x3d
             <StartupCode$DbPrototype>.$Program..cctor() + 0x1ca
             System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xd5
@@ -52,6 +52,7 @@ Navigate to it and run the native executable.
             Program.main(String[]) + 0xd
             DbPrototype!<BaseAddress>+0x1896b6d
         ```
+
         The error above is discussed [here](https://github.com/dotnet/corert/issues/7605#issuecomment-510539851).
  - MacOS
     Fail compilation with error: 
