@@ -29,7 +29,7 @@ Navigate to it and run the native executable.
 
 # Current State
  - Linux
-    Compiles but generates Exception when running:
+    Compiles but generates Exception when running. The error below is discussed [here](https://github.com/dotnet/corert/issues/7605#issuecomment-510539851).
         ``` 
             Internal.Reflection.Core.Execution.ExecutionEnvironment.GetMethodInvoker(RuntimeTypeInfo, QMethodDefinition, RuntimeTypeInfo[], MemberInfo) + 0x165
             System.Reflection.Runtime.MethodInfos.NativeFormat.NativeFormatMethodCommon.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x3f
@@ -52,8 +52,6 @@ Navigate to it and run the native executable.
             Program.main(String[]) + 0xd
             DbPrototype!<BaseAddress>+0x1896b6d
         ```
-
-        The error above is discussed [here](https://github.com/dotnet/corert/issues/7605#issuecomment-510539851).
  - MacOS
     Fail compilation with error: 
     ```
