@@ -3,7 +3,8 @@ This Repo is intended to test coreRT compilation issues ([#7605](https://github.
 a PostgreSQL DB container.
 
 # Requirements
-- Docker && Docker Compose
+- .NET Core (>=2.1)
+- Docker
 
 # Stack
 - Docker
@@ -14,10 +15,17 @@ a PostgreSQL DB container.
 - Postgres 10
 
 # Running
+- Start the DB containar
 ```
-cd REPO_DIRECTORY
+cd REPO_DIRECTORY/Helloworld
 docker-compose up
 ```
+- Compile it using CoreRT
+```
+dotnet publsh -r [wix-x64| linux-x64| osx-x64] -c [Debug|Release]
+```
+Once completed, you can find the native executable in the root folder of your project under `/bin/x64/[Debug| Release]/netcoreapp2.x/publish`.
+Navigate to it and run the native executable.
 
 # Current State
  - Linux

@@ -13,9 +13,11 @@ chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg && \
 chown root:root /etc/apt/sources.list.d/microsoft-prod.list && \
 apt-get update
 
+#Installing .NET Core 2.2
 RUN apt-get install -y  apt-transport-https \
-			aspnetcore-runtime-2.2 \
 			dotnet-sdk-2.2
+
+#Installing Dependencies
 RUN apt-get install -y \
         build-essential \
         cmake \
