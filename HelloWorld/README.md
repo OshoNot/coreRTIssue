@@ -30,28 +30,28 @@ Navigate to it and run the native executable.
 # Current State
  - Linux
     Compiles but generates Exception when running. The error below is discussed [here](https://github.com/dotnet/corert/issues/7605#issuecomment-510539851).
-        ``` 
-            Internal.Reflection.Core.Execution.ExecutionEnvironment.GetMethodInvoker(RuntimeTypeInfo, QMethodDefinition, RuntimeTypeInfo[], MemberInfo) + 0x165
-            System.Reflection.Runtime.MethodInfos.NativeFormat.NativeFormatMethodCommon.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x3f
-            System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xab
-            System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo1.MakeGenericMethod(Type[]) + 0x114
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.buildPlainFinal(Object[], Type[]) + 0x243
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x517
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x1ed
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFormatString(String, Type) + 0xb4
-            Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.Build[T](String) + 0x42
-            System.Collections.Concurrent.ConcurrentDictionary2.GetOrAdd(TKey, Func2) + 0x80
-            Microsoft.FSharp.Core.PrintfImpl.Cache4.Get(PrintfFormat4) + 0x6b
-            Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen[T](PrintfFormat4) + 0x19
-            Npgsql.FSharp.SqlModule.str(SqlModule.ConnectionStringBuilder) + 0x3d
-            <StartupCode$DbPrototype>.$Program..cctor() + 0x1ca
-            System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xd5
-            ---- End of inner exception stack trace ---
-            System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x198
-            System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnNonGCStaticBase(StaticClassConstructionContext*, IntPtr) + 0x9
-            Program.main(String[]) + 0xd
-            DbPrototype!<BaseAddress>+0x1896b6d
-        ```
+    ``` 
+        Internal.Reflection.Core.Execution.ExecutionEnvironment.GetMethodInvoker(RuntimeTypeInfo, QMethodDefinition, RuntimeTypeInfo[], MemberInfo) + 0x165
+        System.Reflection.Runtime.MethodInfos.NativeFormat.NativeFormatMethodCommon.GetUncachedMethodInvoker(RuntimeTypeInfo[], MemberInfo) + 0x3f
+        System.Reflection.Runtime.MethodInfos.RuntimeMethodInfo.get_MethodInvoker() + 0xab
+        System.Reflection.Runtime.MethodInfos.RuntimeNamedMethodInfo1.MakeGenericMethod(Type[]) + 0x114
+        Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.buildPlainFinal(Object[], Type[]) + 0x243
+        Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x517
+        Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFromFormatSpecifier(String, String, Type, Int32) + 0x1ed
+        Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.parseFormatString(String, Type) + 0xb4
+        Microsoft.FSharp.Core.PrintfImpl.PrintfBuilder3.Build[T](String) + 0x42
+        System.Collections.Concurrent.ConcurrentDictionary2.GetOrAdd(TKey, Func2) + 0x80
+        Microsoft.FSharp.Core.PrintfImpl.Cache4.Get(PrintfFormat4) + 0x6b
+        Microsoft.FSharp.Core.PrintfModule.PrintFormatToStringThen[T](PrintfFormat4) + 0x19
+        Npgsql.FSharp.SqlModule.str(SqlModule.ConnectionStringBuilder) + 0x3d
+        <StartupCode$DbPrototype>.$Program..cctor() + 0x1ca
+        System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xd5
+        ---- End of inner exception stack trace ---
+        System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x198
+        System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnNonGCStaticBase(StaticClassConstructionContext*, IntPtr) + 0x9
+        Program.main(String[]) + 0xd
+        DbPrototype!<BaseAddress>+0x1896b6d
+    ```
  - MacOS
     Fail compilation with error: 
     ```
