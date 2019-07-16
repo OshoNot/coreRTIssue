@@ -36,6 +36,5 @@ cd
 ./HelloWorld
 #+END_SRC
 
-Currently it does not work. It throws the following exception:
-#+BEGIN_EXAMPLE
-#+END_EXAMPLE
+Currently it does not work. It will enter an infinite loop while compiling
+and start consuming all system memory.
