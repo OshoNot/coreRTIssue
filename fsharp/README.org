@@ -1,0 +1,41 @@
+#+TITLE: C# Prototype
+
+* Requirements
+
+- Ubuntu 18.04
+- .NET Core 2.2
+- Docker & docker-compose
+
+* How to run
+
+** With CoreCLR
+
+Start the database and run
+#+BEGIN_SRC shell
+docker-compose up -d database
+dotnet run
+#+END_SRC
+
+The expected output is:
+#+BEGIN_EXAMPLE
+Hello World!
+#+END_EXAMPLE
+
+** With CoreRT
+
+Compile with (it may take some time):
+#+BEGIN_SRC shell
+export CppCompilerAndLinker=clang-6.0
+dotnet publish -r linux-x64 -c release -v detailed
+#+END_SRC
+
+Then run with:
+#+BEGIN_SRC shell
+docker-compose up -d
+cd
+./HelloWorld
+#+END_SRC
+
+Currently it does not work. It throws the following exception:
+#+BEGIN_EXAMPLE
+#+END_EXAMPLE

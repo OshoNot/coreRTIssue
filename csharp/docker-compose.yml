@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+    database:
+        image: postgres:10
+        environment:
+            - POSTGRES_USER=dbuser
+            - POSTGRES_PASSWORD=dbpassword
+            - POSTGRES_DB=dbsample
+        ports:
+            - 5432:5432
+        tmpfs:
+            - /var/lib/postgresql/data:rw,noexec,nosuid,size=400m
+        volumes:
+            - ./db-init:/docker-entrypoint-initdb.d
+
+    prototype:
+        build: .
+        depends_on:
+            - database
+        links:
+            - database:database

@@ -1,0 +1,56 @@
+#+TITLE: C# Prototype
+
+* Requirements
+
+- Ubuntu 18.04
+- .NET Core 2.2
+- Docker & docker-compose
+
+* How to run
+
+** With CoreCLR
+
+Start the database and run
+#+BEGIN_SRC shell
+docker-compose up -d database
+dotnet run
+#+END_SRC
+
+The expected output is:
+#+BEGIN_EXAMPLE
+Hello World!
+foo
+wo
+#+END_EXAMPLE
+
+** With CoreRT
+
+Compile with (it may take some time):
+#+BEGIN_SRC shell
+export CppCompilerAndLinker=clang-6.0
+dotnet publish -r linux-x64 -c release -v detailed
+#+END_SRC
+
+Then run with:
+#+BEGIN_SRC shell
+docker-compose up -d
+cd
+./HelloWorld
+#+END_SRC
+
+Currently it does not work. It throws the following exception:
+#+BEGIN_EXAMPLE
+Hello World!
+Unhandled Exception: System.TypeInitializationException: A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+ ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Npgsql.Logging.NpgsqlLogManager.GetClassFullName() + 0x54
+   at Npgsql.NpgsqlConnection..cctor() + 0x57
+   at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xd1
+   --- End of inner exception stack trace ---
+   at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x194
+   at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0x9
+   at Npgsql.NpgsqlConnection..ctor() + 0x29
+   at HelloWorld.Program.Main(String[]) + 0x3a
+   at HelloWorld!<BaseAddress>+0x184e0ed
+Aborted (core dumped)
+#+END_EXAMPLE
