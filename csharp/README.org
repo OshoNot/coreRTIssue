@@ -8,34 +8,8 @@
 
 * How to run
 
-** With CoreCLR
-
-Start the database and run
 #+BEGIN_SRC shell
-docker-compose up -d database
-dotnet run
-#+END_SRC
-
-The expected output is:
-#+BEGIN_EXAMPLE
-Hello World!
-foo
-wo
-#+END_EXAMPLE
-
-** With CoreRT
-
-Compile with (it may take some time):
-#+BEGIN_SRC shell
-export CppCompilerAndLinker=clang-6.0
-dotnet publish -r linux-x64 -c release -v detailed
-#+END_SRC
-
-Then run with:
-#+BEGIN_SRC shell
-docker-compose up -d
-cd
-./HelloWorld
+docker-compose up
 #+END_SRC
 
 Currently it does not work. It throws the following exception:

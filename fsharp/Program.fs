@@ -1,7 +1,7 @@
 open Npgsql.FSharp
 
 let rootConnection : string =
-    Sql.host "localhost"
+    Sql.host "database"
     |> Sql.port 5432
     |> Sql.username "dbuser"
     |> Sql.password "dbpassword"

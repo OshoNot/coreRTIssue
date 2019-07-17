@@ -9,7 +9,7 @@ namespace HelloWorld
         {
             Console.WriteLine("Hello World!");
 
-            var connString = "Host=localhost;Port=5432;Username=dbuser;Password=dbpassword;Database=dbsample";
+            var connString = "Host=database;Port=5432;Username=dbuser;Password=dbpassword;Database=dbsample";
 
             using (var conn = new NpgsqlConnection(connString))
             {
