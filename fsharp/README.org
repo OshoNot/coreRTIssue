@@ -12,6 +12,22 @@
 docker-compose up
 #+END_SRC
 
-Currently it does not work. It will enter an infinite loop while compiling
-and start consuming all system memory.
-
+Currently it does not work. It compiles but throw the following exception:
+#+BEGIN_EXAMPLE
+prototype_1  | Unhandled Exception: System.TypeInitializationException: A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+prototype_1  |  ---> System.TypeInitializationException: A type initializer threw an exception. To determine which type, inspect the InnerException's StackTrace property.
+prototype_1  |  ---> System.NullReferenceException: Object reference not set to an instance of an object.
+prototype_1  |    at Npgsql.Logging.NpgsqlLogManager.GetClassFullName() + 0x54
+prototype_1  |    at Npgsql.NpgsqlConnection..cctor() + 0x57
+prototype_1  |    at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xd1
+prototype_1  |    --- End of inner exception stack trace ---
+prototype_1  |    at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x194
+prototype_1  |    at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnGCStaticBase(StaticClassConstructionContext*, Object) + 0x9
+prototype_1  |    at Npgsql.NpgsqlConnection..ctor() + 0x29
+prototype_1  |    at <StartupCode$HelloWorld>.$Program..cctor() + 0x20
+prototype_1  |    at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0xd1
+prototype_1  |    --- End of inner exception stack trace ---
+prototype_1  |    at System.Runtime.CompilerServices.ClassConstructorRunner.EnsureClassConstructorRun(StaticClassConstructionContext*) + 0x194
+prototype_1  |    at System.Runtime.CompilerServices.ClassConstructorRunner.CheckStaticClassConstructionReturnNonGCStaticBase(StaticClassConstructionContext*, IntPtr) + 0x9
+prototype_1  |    at HelloWorld!<BaseAddress>+0x194a00a
+#+END_EXAMPLE
