@@ -6,5 +6,4 @@ let connectDB =
 [<EntryPoint>]
 let main argv =
     connectDB |> ignore
-    // ExecuteSQL "SELECT * FROM map"
     0
